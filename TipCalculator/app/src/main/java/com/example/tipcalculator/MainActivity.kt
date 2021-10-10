@@ -3,10 +3,9 @@ package com.example.tipcalculator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.tipcalculator.databinding.ActivityMainBinding
-import java.math.BigDecimal
 import java.math.RoundingMode
 import java.text.DecimalFormat
-import java.text.NumberFormat
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
