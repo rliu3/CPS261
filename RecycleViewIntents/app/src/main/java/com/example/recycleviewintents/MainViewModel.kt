@@ -1,4 +1,4 @@
-package com.example.recycleview
+package com.example.recycleviewintents
 
 import androidx.lifecycle.ViewModel
 

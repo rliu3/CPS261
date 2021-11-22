@@ -1,12 +1,13 @@
-package com.example.recycleview
-
+package com.example.recycleviewintents
+import android.content.Intent
 import android.view.LayoutInflater
 import android.widget.ImageView
 import android.widget.TextView
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.lifecycle.MutableLiveData
-import com.example.recycleview.Data
+import com.example.recycleviewintents.Data
 import androidx.recyclerview.widget.RecyclerView
 
 import com.google.android.material.snackbar.Snackbar
@@ -43,7 +44,20 @@ class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             itemImage = itemView.findViewById(R.id.itemImage)
             itemTitle = itemView.findViewById(R.id.itemTitle)
             itemDetail = itemView.findViewById(R.id.itemDetail)
+            itemView.setOnClickListener { v: View ->
+                val i = Intent(v.getContext(),MainActivity2::class.java)
+                var position: Int = getAdapterPosition()
+                val title = itemTitle.text
+                //val image = R.id.itemImage
+                val details = itemDetail.text
+                i.putExtra("title",title)
+                //i.putExtra("image",image)
+                i.putExtra("details",details)
 
+                startActivity(v.context,i,null)
+
+            }
         }
+
     }
 }
